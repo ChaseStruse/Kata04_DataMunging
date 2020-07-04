@@ -29,5 +29,17 @@ def setLowTemps(_weatherData):
 
 lowTemperatures = setLowTemps(weatherData)
 
-print(lowTemperatures)
-print(maxTemperatures)
+def findHighestDifferenceBetweenTemperatures(_lowTemps, _highTemps):
+    highestDifference = 0
+    isString = True
+    for temp in range(len(_highTemps)):
+        isString = isinstance(_highTemps[temp], str)
+        if(highestDifference == 0 and isString == False):
+            highestDifference = _highTemps[temp] - _lowTemps[temp]
+        elif(highestDifference > 0 and isString == False):
+            if(highestDifference < _highTemps[temp] - _lowTemps[temp]):
+                highestDifference = _highTemps[temp] - _lowTemps[temp]
+        
+    return highestDifference
+
+print(findHighestDifferenceBetweenTemperatures(lowTemperatures, maxTemperatures))
