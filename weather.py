@@ -16,11 +16,18 @@ print(weatherData[2][1])
 def setMaxTemps(_weatherData):
     _maxTemps = []
     for day in weatherData:
-        _maxTemps += day[1]
+        _maxTemps.append(day[1])
     return(_maxTemps)
 
 maxTemperatures = setMaxTemps(weatherData)
 
 def setLowTemps(_weatherData):
-    pass
+    _lowTemps = []
+    for day in weatherData:
+        _lowTemps.append(day[2])
+    return(_lowTemps)
 
+lowTemperatures = setLowTemps(weatherData)
+
+print(lowTemperatures)
+print(maxTemperatures)
