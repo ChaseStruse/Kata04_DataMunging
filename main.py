@@ -19,3 +19,8 @@ weatherData = getDataFromFileIntoAnArray(weatherFile)
 maxTemperatures = weather.setMaxTemps(weatherData)
 lowTemperatures = weather.setLowTemps(weatherData)
 print(weather.findTheDayWithTheHighestTemperatureDifference(lowTemperatures, maxTemperatures))
+
+footballFileName = 'football.dat'
+footballFile = getFile(currentWorkingDirectory, footballFileName)
+footballData = getDataFromFileIntoAnArray(footballFile)
+print("FOOTBALL DATA: ", footballData[1][5])
